@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.whole-body {
+  width: 400px;
+  max-width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.navHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.icon-para {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e3c72;
+}
+
+.input-search {
+  flex: 1;
+  height: 40px;
+  border-radius: 10px;
+  border: 2px solid #eee;
+  font-size: 0.9rem;
+  padding: 0 12px;
+  transition: all 0.3s ease;
+}
+
+.input-search:focus {
+  outline: none;
+  border-color: #2a5298;
+}
+
+.image-search {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.image-search:active {
+  transform: scale(0.9);
+}
+
+.address {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.time {
+  display: block;
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.climate-img {
+  width: 180px;
+  height: auto;
+  margin: 10px auto;
+  filter: drop-shadow(0 8px 12px rgba(0,0,0,0.1));
+}
+
+.temp-value {
+  font-size: 4.5rem;
+  font-weight: 800;
+  color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.degree {
+  font-size: 1.8rem;
+  margin-top: 15px;
+  color: #2a5298;
+}
+
+.climate-change-review {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #444;
+}
+
+.humidity {
+  font-size: 1.1rem;
+  color: #666;
+  margin-top: 10px;
+  padding: 8px;
+  background: #f0f3f7;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+@media (min-width: 1200px) {
+  .whole-body {
+    width: 420px;
+    padding: 40px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .whole-body {
+    width: 380px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+  .whole-body {
+    width: 350px;
+    padding: 25px;
+  }
+  .address {
+    font-size: 1.8rem;
+  }
+  .temp-value {
+    font-size: 3.8rem;
+  }
+  .climate-img {
+    width: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .whole-body {
+    width: 100%;
+    border-radius: 20px;
+    padding: 20px;
+  }
+  .navHead {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .icon-para {
+    width: 100%;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  .input-search {
+    height: 38px;
+    font-size: 0.85rem;
+  }
+  .image-search {
+    width: 32px;
+    height: 32px;
+  }
+  .temp-value {
+    font-size: 3.2rem;
+  }
+  .degree {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .icon-para {
+    display: none;
+  }
+  .address {
+    font-size: 1.5rem;
+  }
+}
