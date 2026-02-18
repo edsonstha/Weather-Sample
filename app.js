@@ -15,7 +15,7 @@ async function fetchWeather(city) {
     try {
         const response = await fetch(url);
         const data = await response.json();
-
+        console.log(data);
         if (data.cod === "404") {
             alert("City not found! Please check your spelling.");
             return;
@@ -23,6 +23,7 @@ async function fetchWeather(city) {
 
         document.querySelector('.address').innerHTML = data.name;
         document.querySelector('.temp-value').innerHTML = `${Math.round(data.main.temp)} <span class="degree"> o</span>`;
+        document.querySelector('.wind-speed').innerHTML = `${(data.wind.speed)} m/s`;
         
         const weatherDesc = data.weather[0].main; 
         const iconCode = data.weather[0].icon; // This tells us if it's day or night (e.g., '01n')
@@ -92,7 +93,8 @@ function startSearch() {
 
 document.querySelector('.image-search').addEventListener('click', startSearch);
 
-document.querySelector('.input-search').addEventListener('keydown', (event) => {
+document.querySelector('.input-search')
+.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
         startSearch();
     }
