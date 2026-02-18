@@ -117,25 +117,21 @@ function updateWeatherImage(apiWeather, iconCode) {
 
   const match = climate.find(item => {
 
-    const key = item.weathers.toLowerCase();
-
-    // 🌙 NIGHT IMAGES
     if (isNight) {
-      if (condition.includes('clear') && key.includes('clear')) return true;
-      if (condition.includes('cloud') && key.includes('cloud')) return true;
+      if (condition.includes('clear')) return item.weathers === 'clear-night';
+      if (condition.includes('cloud')) return item.weathers === 'clouds-night';
     }
 
-    // ☀️ DAY IMAGES
-    if (condition.includes('rain') && key.includes('rain')) return true;
-    if (condition.includes('clear') && key.includes('clear')) return true;
-    if (condition.includes('cloud') && key.includes('cloud')) return true;
-    if (condition.includes('wind') && key.includes('wind')) return true;
-    if (condition.includes('smoke') && key.includes('smoke')) return true;
+    if (condition.includes('rain')) return item.weathers === 'rainny';
+    if (condition.includes('clear')) return item.weathers === 'sunny';
+    if (condition.includes('cloud')) return item.weathers === 'sunny-cloudy';
+    if (condition.includes('wind')) return item.weathers === 'windy-sunny';
+    if (condition.includes('smoke')) return item.weathers === 'smoke-cloud';
 
     return false;
   });
 
-  imgElement.src = match ? match.images : './Pic/weather/sunny.png';
+  imgElement.src = match ? match.images : './Pic/weather/sunny.jpg';
 }
 
 /* ============================
